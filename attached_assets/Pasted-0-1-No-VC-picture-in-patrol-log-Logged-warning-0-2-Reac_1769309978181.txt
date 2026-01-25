@@ -1,0 +1,97 @@
+0.1 — No VC picture in patrol log	Logged warning
+0.2 — Reacting but not showing up to an event	Logged warning
+0.3 — Patrolling without an F.T.O	Logged warning
+0.4 — Not ranking someone after acceptance	Logged warning
+0.5 — Improper Use of Force	One Strike
+0.6 — Acting immature/unprofessional in game	One Strike
+0.7 — Failure to assign username when appointed	One Strike
+0.8 — Tazing or cuffing another officer	One Strike
+0.9 — Unprofessionalism or Disrespect towards an HR	1 Strike
+1.0 — Trolling	One Strike
+1.1 — Dress code issues	Logged Warning or One Strike
+1.2 — Max timing players	2 Strikes
+1.3 — Fail RP	1–2 Strikes
+1.4 — Using /passto	1–2 Strikes (unless it’s bandages, ammo or food/coffee)
+1.5 — Incompetence	1–2 Strikes
+1.6 — Opening doors off duty	2 Strikes
+1.7 — Wearing HR uniform as LR	2 Strikes
+1.8 — Improper charges on civilians	2 Strikes
+1.9 — Insubordination to a supervisor	2 Strikes
+2.0 — Not reporting a serious incident	2 Strikes
+2.1 — Discrimination	2 Strikes
+2.2 — Threatening or harassment	NYPD Blacklist perm
+2.3 — Leaking info	NYPD Blacklist perm
+2.4 — Warrantless raid	One Strike
+2.5 — Account underage	NYPD Blacklist
+2.6 — Exploiting	NYPD Blacklist + Ban perm
+2.7 — Plagiarism (cheating on appys)	Blacklist / Not Trusted perm
+2.8 — Improper loadout	One Strike
+2.9 — Not in VC while on duty	One Strike
+3.0 — Alting	Not Trusted / GB perm
+3.1 — Tool abuse	One Strike
+3.2 — Not logging a punishment or rank change	Logged Warning or One Strike
+3.3 — Mass RK in patrol	Fired
+3.4 — Driving under rank	One Strike
+3.5 — Selling NYPD weapons/USD selling	Ban perm
+3.6 — Failing to defend civilians/constitution	One Strike
+3.7 — Ignoring emergency calls	One Strike
+3.8 — Inactivity for 7+ days	Fired
+3.9 — Lying about age	Blacklisted
+4.0 — Signing in and out to respawn faster	Fired → BL
+4.1 — Frisk without probable cause/reasonable suspicion	1–2 Strikes
+4.2 — Taking possession of a firearm during a search	2 Strikes → Fired
+4.3 — HR disrespect	2 Logged Warnings → 1 Strike
+4.4 — Unprofessionalism or Disrespect towards another officer	2 Logged Warnings → 2 Strikes
+4.5 — Acting immature/unprofessional	2 Logged Warnings → 2 Strikes
+4.6 — Robbing Players on duty	2 Strikes
+4.7 — Unprofessionalism or Disrespect towards High Command	2 Strikes → Demotion → Fired
+4.8 — Failure to present username when obligated	2 Strikes
+4.9 — Saying the N word/slurs in chat	2× Logged Warnings
+5.0 — Playing on LOA	1 Strike + LOA removal
+5.1 — Reapplying before 48 hours	NYPD Blacklist (5 days)
+5.2 — AI on applications	NYPD Blacklist (2 weeks)
+5.3 — Beam links	NYPD Blacklist + Ban
+5.4 — Trolling on applications	NYPD Blacklist perm
+5.5 — Mag dumping on duty	1× Strike
+5.6 — Opening prison doors/gates off duty	1× Strike
+5.7 — No English	NYPD Blacklist perm
+5.8 — Sharing answers on application	NYPD Blacklist perm
+5.9 — Rejoining to avoid punishment	NYPD Blacklist perm
+6.0 — Leaving Discord server	Fired (after 7 days)
+6.1 — Looting dead bags on duty	1× Strike
+6.2 — Unrealistic head/skintone on duty	1× Logged Warning
+6.3 — Letting prisoners out (on/off duty)	2× Strikes
+6.4 — Cuff rushing	1× Strike
+6.5 — In scripting/USD servers	NYPD Blacklist + Ban perm
+6.6 — Cop baiting	2× Strikes
+6.7 — RK'ing off duty right outside NYPD station	1× Strike
+6.8 — Racism/slurs	NYPD Blacklist perm
+6.9 — Animations on duty	2× Logged Warnings
+7.0 — Signing in/out repeatedly	1× Strike
+7.1 — Blacklisting someone without deranking	2× Logged Warnings
+7.2 — Unnecessary reactions	1× Strike
+7.3 — Pinging everyone/attempting to	1× Strike
+7.4 — NSFW	NYPD Blacklist + Ban
+7.5 — Promoting gang in NYPD	NYPD Blacklist perm
+7.6 — False punishment	1–2 Strikes
+7.7 — Interrupting/trolling in trainings or tryouts	1× Strike
+7.8 — Pinging roles	1× Strike
+7.9 — General disrespect/unprofessionalism	2× Logged Warnings or 1× Strike
+8.0 — Lying about having a mic	NYPD Blacklist perm
+8.1 — Corruption	NYPD Blacklist perm
+8.2 — Accepting someone while fired/blacklisted	2× Logged Warnings
+8.3 — Teaming with civilians	NYPD Blacklist perm
+8.4 — False arrest	1× Strike
+8.5 — Fake logging	Fired
+8.6 — Improper log format	2× Logged Warnings
+8.7 — Duplicating	NYPD Blacklist + Ban
+8.8 — Wrongfully searching civilians	1× Strike
+8.9 — Not presenting badge ID in patrol logs	1–2 Strikes
+9.0 — Revoking an IA punishment without approval	1× Strike
+9.1 — Giving false information to officers	1–2 Strikes
+9.2 — Driving civilian cars on duty	1× Strike
+9.3 — Attempting to override IA decisions	1–2 Strikes
+9.4 — Refusing lawful orders in-game from a HICOM	1–2 Strikes
+9.5 — Requesting whitelist bypasses or rank skips	Logged Warning or Strike
+9.6 — RKING NYPD Personnel inside PD Station	NYPD Blacklist perm
+9.7 — Failure to follow the chain of command	1–2 Strikes
