@@ -60,6 +60,7 @@ Duration: ${input.duration || ""}
 Note: **User can appeal if they think this was a mistake** ➜ <#1274154888439271434>
 Proof: <:IA:1287467525923143751> Ticket-${input.ticketNumber || ""} <:IA:1287467525923143751>`;
       } else {
+        const offenseNumbers = selectedOffenses.map(o => `Offense ${o.code}`).join(", ");
         // Revoke format
         message = `<:NYPD:1287467909186060288>| Revoked Punishment
 <:NYPD:1287467909186060288>| User ➜ <@${input.userId}>
