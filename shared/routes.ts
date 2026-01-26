@@ -40,8 +40,8 @@ export const api = {
       input: z.object({
         hrId: z.string(),
         userId: z.string(),
-        ticketNumber: z.string(),
-        duration: z.string(),
+        ticketNumber: z.string().optional(),
+        duration: z.string().optional(),
         action: z.enum(["Punishment", "Revoke"]),
         offenseIds: z.array(z.number()),
         notes: z.string().optional(),

@@ -53,25 +53,25 @@ export async function registerRoutes(
         message = `<:IA:1287467525923143751><:NYPD:1287467909186060288> | **Punishment ** | <:NYPD:1287467909186060288><:IA:1287467525923143751>
 HR: <@${input.hrId}>
 User: <@${input.userId}>
-Reason: ${offenseNumbers || "N/A"}
-Action: ${actions || "N/A"}
-Duration: ${input.duration || "N/A"}
+Reason: ${offenseNumbers || ""}
+Action: ${actions || ""}
+Duration: ${input.duration || ""}
 Note: User can appeal if they think this was a mistake ➜ #ticket-support
-Proof: <:IA:1287467525923143751> Ticket-[${input.ticketNumber || "N/A"}] <:IA:1287467525923143751>`;
+Proof: <:IA:1287467525923143751> Ticket-[${input.ticketNumber || ""}] <:IA:1287467525923143751>`;
       } else {
         // Revoke format
         message = `<:NYPD:1287467909186060288>| Revoked Punishment
 <:NYPD:1287467909186060288>| User ➜ <@${input.userId}>
-<:NYPD:1287467909186060288>| Reason ➜ <:IA:1287467525923143751> Ticket: (${input.ticketNumber || "N/A"}) <:IA:1287467525923143751>`;
+<:NYPD:1287467909186060288>| Reason ➜ <:IA:1287467525923143751> Ticket: (${input.ticketNumber || ""}) <:IA:1287467525923143751>`;
       }
 
       // Log the generation
       await storage.createLog({
         hrId: input.hrId,
         userId: input.userId,
-        ticketNumber: input.ticketNumber,
+        ticketNumber: input.ticketNumber || "",
         action: input.action,
-        duration: input.duration,
+        duration: input.duration || "",
         offenses: selectedOffenses.map(o => o.code),
         notes: input.notes,
         generatedMessage: message,

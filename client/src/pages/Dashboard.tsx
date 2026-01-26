@@ -4,9 +4,8 @@ import { OffenseSelector } from "@/components/OffenseSelector";
 import { DateChecker } from "@/components/DateChecker";
 import { MessageOutput } from "@/components/MessageOutput";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { Loader2, ShieldAlert, ShieldCheck, Sparkles, User, FileText, Clock, Hash } from "lucide-react";
-import { motion } from "framer-motion";
+import { ShieldAlert, ShieldCheck, User, FileText, Clock, Hash } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 export default function Dashboard() {
   const { data: offenses = [], isLoading: loadingOffenses } = useOffenses();
@@ -19,7 +18,6 @@ export default function Dashboard() {
   const [duration, setDuration] = useState("");
   const [notes, setNotes] = useState("");
   const [selectedOffenseIds, setSelectedOffenseIds] = useState<number[]>([]);
-  const [useAi, setUseAi] = useState(false);
   const [generatedMessage, setGeneratedMessage] = useState("");
 
   // Persist HR ID
@@ -33,8 +31,8 @@ export default function Dashboard() {
   }, [hrId]);
 
   const handleGenerate = async (action: "Punishment" | "Revoke") => {
-    if (!hrId || !userId || !ticketNumber || !duration) {
-      // Basic client validation (could be improved with a form library)
+    if (!hrId || !userId) {
+      // Basic client validation
       return; 
     }
 
@@ -42,12 +40,12 @@ export default function Dashboard() {
       const result = await generateMutation.mutateAsync({
         hrId,
         userId,
-        ticketNumber,
-        duration,
+        ticketNumber: ticketNumber || undefined,
+        duration: duration || undefined,
         action,
         offenseIds: selectedOffenseIds,
         notes,
-        useAi,
+        useAi: false,
       });
       setGeneratedMessage(result.message);
     } catch (error) {
@@ -84,21 +82,6 @@ export default function Dashboard() {
           
           <div className="pt-4 border-t border-border/50">
             <DateChecker />
-          </div>
-
-          <div className="pt-4 border-t border-border/50">
-             <div className="bg-gradient-to-br from-primary/10 to-blue-500/5 rounded-xl p-4 border border-primary/10">
-               <div className="flex items-center gap-2 mb-2 text-primary font-semibold text-sm">
-                 <Sparkles className="w-4 h-4" />
-                 AI Enhancement
-               </div>
-               <div className="flex items-center justify-between">
-                 <span className="text-xs text-muted-foreground leading-tight max-w-[140px]">
-                   Use AI to professionalize the reason text.
-                 </span>
-                 <Switch checked={useAi} onCheckedChange={setUseAi} />
-               </div>
-             </div>
           </div>
         </div>
 

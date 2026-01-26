@@ -18,9 +18,9 @@ export const logs = pgTable("logs", {
   id: serial("id").primaryKey(),
   hrId: text("hr_id").notNull(),
   userId: text("user_id").notNull(),
-  ticketNumber: text("ticket_number").notNull(),
+  ticketNumber: text("ticket_number"),
   action: text("action").notNull(), // "Punishment" or "Revoke"
-  duration: text("duration").notNull(),
+  duration: text("duration"),
   offenses: text("offenses").array(), // Array of offense codes
   notes: text("notes"),
   createdAt: timestamp("created_at").defaultNow(),
@@ -50,8 +50,8 @@ export type LogResponse = Log;
 export type GenerateMessageRequest = {
   hrId: string;
   userId: string;
-  ticketNumber: string;
-  duration: string;
+  ticketNumber?: string;
+  duration?: string;
   action: "Punishment" | "Revoke";
   offenseIds: number[]; // IDs of selected offenses
   notes?: string;
