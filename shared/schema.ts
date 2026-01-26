@@ -20,6 +20,7 @@ export const logs = pgTable("logs", {
   userId: text("user_id").notNull(),
   ticketNumber: text("ticket_number"),
   action: text("action").notNull(), // "Punishment" or "Revoke"
+  manualAction: text("manual_action"), // The custom action text from HR
   duration: text("duration"),
   offenses: text("offenses").array(), // Array of offense codes
   notes: text("notes"),
@@ -53,6 +54,7 @@ export type GenerateMessageRequest = {
   ticketNumber?: string;
   duration?: string;
   action: "Punishment" | "Revoke";
+  manualAction?: string; // The custom action text from HR
   offenseIds: number[]; // IDs of selected offenses
   notes?: string;
   useAi: boolean;

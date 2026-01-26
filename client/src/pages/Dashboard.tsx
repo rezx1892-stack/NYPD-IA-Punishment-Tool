@@ -4,7 +4,7 @@ import { OffenseSelector } from "@/components/OffenseSelector";
 import { DateChecker } from "@/components/DateChecker";
 import { MessageOutput } from "@/components/MessageOutput";
 import { Button } from "@/components/ui/button";
-import { ShieldAlert, ShieldCheck, User, FileText, Clock, Hash } from "lucide-react";
+import { ShieldAlert, ShieldCheck, User, FileText, Clock, Hash, Activity } from "lucide-react";
 import { Loader2 } from "lucide-react";
 
 export default function Dashboard() {
@@ -16,6 +16,7 @@ export default function Dashboard() {
   const [userId, setUserId] = useState("");
   const [ticketNumber, setTicketNumber] = useState("");
   const [duration, setDuration] = useState("");
+  const [manualAction, setManualAction] = useState("");
   const [notes, setNotes] = useState("");
   const [selectedOffenseIds, setSelectedOffenseIds] = useState<number[]>([]);
   const [generatedMessage, setGeneratedMessage] = useState("");
@@ -43,6 +44,7 @@ export default function Dashboard() {
         ticketNumber: ticketNumber || undefined,
         duration: duration || undefined,
         action,
+        manualAction: manualAction || undefined,
         offenseIds: selectedOffenseIds,
         notes,
         useAi: false,
@@ -149,12 +151,24 @@ export default function Dashboard() {
 
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-muted-foreground flex items-center gap-1">
+                    <Activity className="w-3.5 h-3.5" /> Action Taken
+                  </label>
+                  <input
+                    value={manualAction}
+                    onChange={(e) => setManualAction(e.target.value)}
+                    placeholder="e.g. Logged Warning, Demotion, etc."
+                    className="w-full bg-background border border-input rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-medium text-muted-foreground flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5" /> Duration
                   </label>
                   <input
                     value={duration}
                     onChange={(e) => setDuration(e.target.value)}
-                    placeholder="e.g. 2 Logged Warnings, 24 Hours, Permanent"
+                    placeholder="e.g. 24 Hours, Permanent"
                     className="w-full bg-background border border-input rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>
