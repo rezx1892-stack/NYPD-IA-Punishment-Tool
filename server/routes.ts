@@ -48,14 +48,14 @@ export async function registerRoutes(
 
       if (input.action === "Punishment") {
         const offenseNumbers = selectedOffenses.map(o => o.code).join(", ");
-        // Use manualAction if provided, otherwise fallback to selected offenses' punishments
-        const actionText = input.manualAction || Array.from(new Set(selectedOffenses.map(o => o.punishment))).join(", ");
+        // Use manualAction if provided, otherwise leave it blank
+        const actionText = input.manualAction || "";
         
         message = `<:IA:1287467525923143751><:NYPD:1287467909186060288> | **Punishment ** | <:NYPD:1287467909186060288><:IA:1287467525923143751>
 HR: <@${input.hrId}>
 User: <@${input.userId}>
 Reason: ${offenseNumbers || ""}
-Action: ${actionText || ""}
+Action: ${actionText}
 Duration: ${input.duration || ""}
 Note: User can appeal if they think this was a mistake ➜ #ticket-support
 Proof: <:IA:1287467525923143751> Ticket-${input.ticketNumber || ""} <:IA:1287467525923143751>`;
