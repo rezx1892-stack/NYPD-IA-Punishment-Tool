@@ -51,19 +51,18 @@ export async function registerRoutes(
         // Use manualAction if provided, otherwise leave it blank
         const actionText = input.manualAction || "";
         
-        message = `<:IA:1287467525923143751><:NYPD:1287467909186060288> | **Punishment ** | <:NYPD:1287467909186060288><:IA:1287467525923143751>
+        message = `<:IA:1287467525923143751>  I PUNISHMENT I <:IA:1287467525923143751>   
 HR: <@${input.hrId}>
-User: <@${input.userId}>
+User(s): <@${input.userId}>
 Reason: ${offenseNumbers || ""}
 Action: ${actionText}
 Duration: ${input.duration || ""}
-Note: **User can appeal if they think this was a mistake** ➜ <#1274154888439271434>
-Proof: <:IA:1287467525923143751> Ticket-${input.ticketNumber || ""} <:IA:1287467525923143751>`;
+Note:  **User can appeal if they think this was a mistake —>  #ticket-support **
+Proof: <:IA:1287467525923143751> Ticket - [${input.ticketNumber || ""}] <:IA:1287467525923143751>`;
       } else {
         // Revoke format
-        message = `<:NYPD:1287467909186060288>| Revoked Punishment
-<:NYPD:1287467909186060288>| User ➜ <@${input.userId}>
-<:NYPD:1287467909186060288>| Reason ➜ <:IA:1287467525923143751> Ticket: ${input.ticketNumber || ""} <:IA:1287467525923143751>`;
+        message = `<:IA:1287467525923143751> | Revoked: <@${input.userId}>
+<:IA:1287467525923143751> | Reason: Ticket-${input.ticketNumber || ""}`;
       }
 
       // Log the generation
