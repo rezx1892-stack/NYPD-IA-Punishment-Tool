@@ -1,6 +1,7 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
+import { rm, readFile, writeFile } from "fs/promises";
+import { join } from "path";
 
 // server deps to bundle to reduce openat(2) syscalls
 // which helps cold start times
@@ -37,6 +38,17 @@ async function buildAll() {
 
   console.log("building client...");
   await viteBuild();
+
+  // Fix SPA routing for GitHub Pages
+  try {
+    const indexPath = join("dist", "public", "index.html");
+    const fourOhFourPath = join("dist", "public", "404.html");
+    const indexContent = await readFile(indexPath);
+    await writeFile(fourOhFourPath, indexContent);
+    console.log("created 404.html for SPA routing");
+  } catch (err) {
+    console.warn("Could not create 404.html:", err);
+  }
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
