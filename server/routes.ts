@@ -66,17 +66,22 @@ Proof: <:IA:1287467525923143751> Ticket - ${input.ticketNumber || ""} <:IA:12874
       }
 
       // Log the generation
-      await storage.createLog({
-        hrId: input.hrId,
-        userId: input.userId,
-        ticketNumber: input.ticketNumber || "",
-        action: input.action,
-        manualAction: input.manualAction || "",
-        duration: input.duration || "",
-        offenses: selectedOffenses.map(o => o.code),
-        notes: input.notes,
-        generatedMessage: message,
-      });
+      try {
+        await storage.createLog({
+          hrId: input.hrId,
+          userId: input.userId,
+          ticketNumber: input.ticketNumber || "",
+          action: input.action,
+          manualAction: input.manualAction || "",
+          duration: input.duration || "",
+          offenses: selectedOffenses.map(o => o.code),
+          notes: input.notes,
+          generatedMessage: message,
+        });
+      } catch (logErr) {
+        console.error("Failed to log punishment:", logErr);
+        // Continue even if logging fails, so the user gets their message
+      }
 
       res.json({ message });
 
