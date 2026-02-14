@@ -37,4 +37,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  base: "/NYPD-IA-Punishment-Tool/",
 });
