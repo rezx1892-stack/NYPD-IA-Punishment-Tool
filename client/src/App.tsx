@@ -10,6 +10,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Dashboard} />
+      <Route path="/NYPD-or-Internal-Affairs-Punishment-Tool2" component={Dashboard} />
       <Route component={NotFound} />
     </Switch>
   );
