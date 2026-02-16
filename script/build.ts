@@ -43,16 +43,10 @@ async function buildAll() {
   try {
     const indexPath = join("dist", "public", "index.html");
     const fourOhFourPath = join("dist", "public", "404.html");
-    let indexContent = (await readFile(indexPath, "utf-8"));
-    
-    // Fix relative paths for GitHub Pages if not at root
-    // This is a simple replacement for common assets
-    indexContent = indexContent.replaceAll('src="/', 'src="./');
-    indexContent = indexContent.replaceAll('href="/', 'href="./');
+    const indexContent = (await readFile(indexPath, "utf-8"));
     
     await writeFile(fourOhFourPath, indexContent);
-    await writeFile(indexPath, indexContent);
-    console.log("created 404.html and fixed paths for SPA routing");
+    console.log("created 404.html for SPA routing");
   } catch (err) {
     console.warn("Could not create 404.html:", err);
   }
