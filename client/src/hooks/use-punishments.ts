@@ -7,7 +7,9 @@ export function useOffenses() {
     queryKey: [api.offenses.list.path],
     queryFn: async () => {
       // Use direct mock data for GitHub Pages since there's no backend
-      if (window.location.hostname.includes("github.io")) {
+      // Using a broader check to ensure it works on subdomains/custom domains on GitHub Pages
+      if (window.location.hostname.endsWith("github.io") || window.location.hostname.includes("rezx1892-stack.github.io")) {
+        console.log("GitHub Pages detected, providing mock offenses");
         return [
           {id:3687,code:"0.1",description:"No VC picture in patrol log",punishment:"Logged warning",category:"Category 0"},
           {id:3688,code:"0.2",description:"Reacting but not showing up to an event",punishment:"Logged warning",category:"Category 0"},
@@ -33,7 +35,7 @@ export function useGenerateMessage() {
   return useMutation({
     mutationFn: async (data: GenerateMessageInput) => {
       // Local generation for GitHub Pages
-      if (window.location.hostname.includes("github.io")) {
+      if (window.location.hostname.endsWith("github.io") || window.location.hostname.includes("rezx1892-stack.github.io")) {
         const selectedOffenses = data.offenseIds.length > 0 
           ? `Offenses: ${data.offenseIds.join(", ")}` 
           : "No specific offenses selected";
