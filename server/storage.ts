@@ -32,7 +32,8 @@ export class DatabaseStorage implements IStorage {
   }
 
   async seedOffenses(): Promise<void> {
-    const count = await db.select().from(offenses);
+    // Always clear and re-seed to ensure fresh data
+    await db.delete(offenses);
     
     const offensesData = [
       // Major Offenses (Fire/Blacklist)
@@ -135,11 +136,6 @@ export class DatabaseStorage implements IStorage {
       { code: "0.2", description: "Failure to react to HR announcements", punishment: "1x Strike", category: "High Rank Violations" },
       { code: "0.1", description: "Not ranking someone after acceptance", punishment: "1x Strike", category: "High Rank Violations" },
     ];
-
-    if (count.length > 0) {
-      // Clear existing offenses and re-seed
-      await db.delete(offenses);
-    }
     
     await db.insert(offenses).values(offensesData);
   }
